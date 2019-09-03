@@ -30,7 +30,19 @@ var onSuccess = function(position) {
               'Heading: '           + position.coords.heading           + '\n' +
               'Speed: '             + position.coords.speed             + '\n' +
               'Timestamp: '         + position.timestamp                + '\n');
+
+       L.mapquest.key = 'KKigFM8J1l0JTWUW4VFNGQ4AjSkwIsmc';
+
+
+L.mapquest.map('map', {
+  center: [position.coords.latitude, position.coords.longitude],
+  layers: L.mapquest.tileLayer('map'),
+  zoom: 17
+});    
+
+navigator.notification.beep(1);
     };
+    
 
     // onError Callback receives a PositionError object
     //
@@ -40,13 +52,16 @@ var onSuccess = function(position) {
     }
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    
   
 }
-
+  
 }
 
 checkConnection();
 
+     
+      
 
 
 })
