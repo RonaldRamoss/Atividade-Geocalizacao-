@@ -14,22 +14,15 @@ $(document).on("click","#geo",function(){
     states[Connection.CELL]     = 'Cell generic connection';
     states[Connection.NONE]     = 'No network connection';
 
-    alert(states[networkState]);
+   
 if(networkState == Connection.NONE ){
 alert('Erro sem conexão');
-
+navigator.vibrate(6000);
+navigator.notification.beep(3);
   
 }
 else {
 var onSuccess = function(position) {
-        alert('Latitude: '          + position.coords.latitude          + '\n' +
-              'Longitude: '         + position.coords.longitude         + '\n' +
-              'Altitude: '          + position.coords.altitude          + '\n' +
-              'Accuracy: '          + position.coords.accuracy          + '\n' +
-              'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-              'Heading: '           + position.coords.heading           + '\n' +
-              'Speed: '             + position.coords.speed             + '\n' +
-              'Timestamp: '         + position.timestamp                + '\n');
 
        L.mapquest.key = 'KKigFM8J1l0JTWUW4VFNGQ4AjSkwIsmc';
 
