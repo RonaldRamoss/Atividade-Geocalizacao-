@@ -1,6 +1,5 @@
 
-window.onload = function(){
-
+$(document).on("click","#geo",function(){
   function checkConnection() {
     var networkState = navigator.connection.type;
 
@@ -23,17 +22,7 @@ navigator.notification.beep(3);
 }
 else {
 var onSuccess = function(position) {
-
-       L.mapquest.key = 'KKigFM8J1l0JTWUW4VFNGQ4AjSkwIsmc';
-
-
-L.mapquest.map('map', {
-  center: [position.coords.latitude, position.coords.longitude],
-  layers: L.mapquest.tileLayer('map'),
-  zoom: 17
-});    
-
-navigator.notification.beep(1);
+window.location.href= "geocaliza.html";
     };
     
 
@@ -57,5 +46,5 @@ checkConnection();
       
 
 
-}
+});
 
