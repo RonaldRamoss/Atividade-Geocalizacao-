@@ -1,5 +1,12 @@
 #geo{
 
-  margin-top: 50%
+  margin-top: 10%;
+  background-color:limegreen;
+  color:white;
+  border: none;
+  
+}
+body{
+  background-color:cornflowerblue;
 }
 
